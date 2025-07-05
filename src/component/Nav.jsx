@@ -15,13 +15,24 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Input } from "@/components/ui/input"
 
-const Nav = ({ mostLikes,setValue,value,setSelectedCategory}) => {
+const Nav = ({ mostLikes,setValue,value,setSelectedCategory,setMostLikes}) => {
+
+
+  const deleteBtn = (item) => {
+    const filteredItem =  mostLikes.some((i) => i.ProductId === item.ProductId)
+    if (filteredItem) {
+      setMostLikes(mostLikes.filter((p) => p.ProductId !== item.ProductId));
+      
+    }
+    
+  }
+
   return (
     <div className="p-1">
       <div className="hidden md:flex gap-2 justify-between items-center border-b-1 p-5">
         <div className="flex gap-2 items-center">
           <div>
-            <img src={aliLogo} className="max-w-[150px] md:max-w-[200px] " alt="" />
+            <img src={aliLogo} className="max-w-[150px] md:max-w-[200px] " alt="" /> 
           </div>
         </div>
          <div>
@@ -63,6 +74,9 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory}) => {
                                   className="w-full max-h-[200px] object-cover"
                                   alt={item.Product_Desc}
                                 />
+                                <div onClick={() => deleteBtn(item)} className="w-8 h-8 text-black cursor-pointer bg-white rounded-full absolute top-0 right-0 m-2 flex items-center justify-center shadow">
+                                X
+                              </div>
                               </div>
 
                               <div className="p-3 flex flex-col gap-2">
@@ -154,7 +168,7 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory}) => {
                           {mostLikes.map((item, index) => (
                             <div
                               key={item.ProductId}
-                              className="bg-white border rounded-xl shadow hover:shadow-md transition overflow-hidden max-w-[330px]"
+                              className="bg-white border rounded-xl shadow hover:shadow-md transition overflow-hidden max-w-[295px]"
                             >
                               <div className="relative">
                                 <img
@@ -162,6 +176,9 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory}) => {
                                   className="w-full max-h-[200px] object-cover"
                                   alt={item.Product_Desc}
                                 />
+                                <div onClick={() => deleteBtn(item)} className="w-8 h-8 text-black cursor-pointer bg-white rounded-full absolute top-0 right-0 m-2 flex items-center justify-center shadow">
+                                X
+                              </div>
                               </div>
 
                               <div className="p-3 flex flex-col gap-2">

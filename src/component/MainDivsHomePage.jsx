@@ -3,7 +3,7 @@ import { FaMedal } from "react-icons/fa";
 
 const MainDivsHomePage = ({ filteredArr }) => {
   const [countOne, setCountOne] = useState(0);
-  const [countTwo, setCountTwo] = useState(3);
+  const [countTwo, setCountTwo] = useState(4);
   const [countThree, setCountThree] = useState(0);
   const [countFour, setCountFour] = useState(1);
 
@@ -11,12 +11,12 @@ const MainDivsHomePage = ({ filteredArr }) => {
     const timer = setTimeout(() => {
       if (countTwo >= 60 || countFour >= 10) {
         setCountOne(0);
-        setCountTwo(3);
+        setCountTwo(4);
         setCountThree(0);
         setCountFour(1);
       } else {
-        setCountOne((prev) => prev + 3);
-        setCountTwo((prev) => prev + 3);
+        setCountOne((prev) => prev + 4);
+        setCountTwo((prev) => prev + 4);
         setCountThree((prev) => prev + 1);
         setCountFour((prev) => prev + 1);
       }
@@ -26,7 +26,7 @@ const MainDivsHomePage = ({ filteredArr }) => {
   }, [countOne, countTwo, countThree, countFour]);
 
   return (
-    <div className="p-10 min-h-[500px] max-h-[500px] flex flex-col gap-20 items-center">
+    <div className="p-10 min-h-[500px] max-h-[500px] flex flex-col gap-10 items-center">
       <div>
         <h1 className="text-2xl md:text-5xl font-bold tracking-wide font-sans animate-fade-in">
           Today's deals
@@ -45,14 +45,16 @@ const MainDivsHomePage = ({ filteredArr }) => {
             .map((product) => (
               <div
                 key={product.ProductId}
-                className="bg-white border rounded-xl shadow hover:shadow-md transition overflow-hidden max-w-[300px]"
+                className="bg-white border rounded-xl shadow hover:shadow-md min-h-[350px] transition overflow-hidden max-w-[300px]"
               >
                 <div className="relative">
+                  <div className="min-h-[200px]">
                   <img
                     src={product.Image_Url}
                     className="w-full max-h-[200px] object-cover"
                     alt={product.Product_Desc}
                   />
+                  </div>
                 </div>
 
                 <div className="p-3 flex flex-col gap-2">
@@ -106,11 +108,13 @@ const MainDivsHomePage = ({ filteredArr }) => {
                 className="bg-white border rounded-xl shadow hover:shadow-md transition overflow-hidden max-w-[300px] min-h-[300px]"
               >
                 <div className="relative">
+                  <div className="min-h-[200px] min-w-[300px]">
                   <img
                     src={product.Image_Url}
                     className="w-full max-h-[200px] object-cover"
                     alt={product.Product_Desc}
                   />
+                  </div>
                 </div>
 
                 <div className="p-3 flex flex-col gap-2">

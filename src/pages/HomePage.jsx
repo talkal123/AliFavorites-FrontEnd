@@ -173,7 +173,7 @@ const HomePage = ({
                         {product.Product_Desc.split(" ").slice(0, 10).join(" ")}
                       </p>
                       <div className="flex items-center gap-2">
-                        <span className="text-green-600 font-bold text-sm">
+                        <span className="text-green-600 font-bold text-xs md:text-sm">
                           ₪{product.Discount_Price}
                         </span>
                         <span className="text-red-400 line-through text-xs">

@@ -53,6 +53,7 @@ function App() {
         <Nav
         setSelectedCategory={setSelectedCategory}
         mostLikes={mostLikes}
+        setMostLikes={setMostLikes}
         filteredArr={filteredArr}
         setFilteredArr={setFilteredArr}
         allProducts={categories}

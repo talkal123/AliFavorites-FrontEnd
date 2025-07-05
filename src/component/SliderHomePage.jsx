@@ -33,7 +33,7 @@ const SliderHomePage = () => {
           <CarouselItem key={index} className="w-full">
             <div className="p-0">
               <Card className="p-0">
-                <CardContent className="w-full h-[400px] overflow-hidden p-0">
+                <CardContent className="w-full h-[150px] md:h-[400px] overflow-hidden p-0">
                   <img
                     src={src}
                     alt={`Slide ${index + 1}`}
