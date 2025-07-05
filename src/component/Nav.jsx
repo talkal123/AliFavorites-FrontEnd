@@ -55,7 +55,7 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory }) => {
                           {mostLikes.map((item, index) => (
                             <div
                               key={item.ProductId}
-                              className="bg-white border rounded-xl shadow hover:shadow-md transition overflow-hidden max-w-[300px]"
+                              className="bg-white border rounded-xl shadow hover:shadow-md transition overflow-hidden max-w-[full]"
                             >
                               <div className="relative">
                                 <img
@@ -100,7 +100,7 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory }) => {
                                   rel="noopener noreferrer"
                                 >
                                   <button className="cursor-pointer bg-gradient-to-r from-blue-500 to-blue-700 text-white w-full rounded-md py-1 font-semibold hover:from-blue-600 hover:to-blue-800 transition">
-                                    🚀 Purchase Now
+                                    Purchase Now
                                   </button>
                                 </a>
                               </div>
