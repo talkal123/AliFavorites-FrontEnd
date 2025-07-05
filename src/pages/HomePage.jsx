@@ -71,8 +71,8 @@ const HomePage = ({
       <MainDivsHomePage filteredArr={filteredArr} />
 
       <div className="flex justify-center">
-        <div className="p-15 min-w-full md:min-w-[1500px] flex flex-col-reverse md:flex-row justify-between gap-10 mt-50">
-          <div className="flex gap-5">
+        <div className="p-15 min-w-full md:min-w-[1500px] flex flex-col-reverse md:flex-row justify-between gap-10 mt-10 md:mt-50">
+          <div className="grid grid-cols-2 md:flex gap-5">
             {["All", "Most Popular", "Most Sales", "Positive Feedbacks"].map(
               (btn) => (
                 <button
@@ -118,14 +118,14 @@ const HomePage = ({
         </div>
       </div>
 
-      <div className="flex flex-col gap-20 justify-center items-center">
-        <div className="flex justify-center items-center p-10">
+      <div className="flex flex-col gap-0 md:gap-20 justify-center items-center">
+        <div className="flex justify-center items-center p-5">
           <h1 className="text-2xl md:text-5xl font-bold tracking-wide font-sans animate-fade-in">
             Discover Your Favorite Picks 🛍️
           </h1>
         </div>
 
-        <div className={`p-4 grid ${display} gap-10 max-w-[1600px]`}>
+        <div className={`p-5 grid ${display} gap-5 md:gap-10 max-w-[1600px]`}>
           {theFilter.slice(0, itemsToShow).map((product) => {
             const isLiked = mostLikes.some(
               (p) => p.ProductId === product.ProductId
@@ -136,7 +136,7 @@ const HomePage = ({
                 <AlertDialogTrigger asChild>
                   <div
                     onClick={() => setById(product)}
-                    className="bg-white shadow hover:shadow-md transition overflow-hidden cursor-pointer"
+                    className="bg-white shadow hover:shadow-md transition overflow-hidden cursor-pointer rounded-lg"
                   >
                     <div className="relative">
                       <div className="w-8 h-8 bg-white rounded-full absolute right-0 m-2 flex items-center justify-center shadow">
@@ -160,7 +160,7 @@ const HomePage = ({
                       </div>
                       <img
                         src={product.Image_Url}
-                        className="w-full max-h-[300px] min-h-[300px] object-cover"
+                        className="w-full min-h-[200px] max-h-[300px] md:max-h-[300px] md:min-h-[300px] object-cover"
                         alt={product.Product_Desc}
                       />
                     </div>

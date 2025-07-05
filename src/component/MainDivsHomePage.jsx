@@ -5,22 +5,22 @@ const MainDivsHomePage = ({filteredArr}) => {
   const [countOne, setCountOne] = useState (0)
   const [countTwo, setCountTwo] = useState (3)
   const [countThree, setCountThree] = useState (0)
-  const [countFour, setCountFour] = useState (2)
+  const [countFour, setCountFour] = useState (1)
 
   
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (countTwo >= 60 || countFour >= 60) {
+      if (countTwo >= 60 || countFour >= 10) {
         setCountOne(0);
         setCountTwo(3);
         setCountThree(0)
-        setCountFour(2)
+        setCountFour(1)
       } else {
         setCountOne(prev => prev + 3);
         setCountTwo(prev => prev + 3);
-        setCountThree(prev => prev + 2);
-        setCountFour(prev => prev + 2);
+        setCountThree(prev => prev + 1);
+        setCountFour(prev => prev + 1);
       }
     }, 8000);
 
@@ -88,7 +88,7 @@ const MainDivsHomePage = ({filteredArr}) => {
     </div>
   ))}
 </div>
-      <div className={`p-4 grid grid-cols-2 md:hidden gap-10 max-w-[1400px]`}>
+      <div className={` md:hidden gap-5`}>
   {filteredArr ? (
     [...filteredArr]
       .sort(() => Math.random() - 0.5)
@@ -96,7 +96,7 @@ const MainDivsHomePage = ({filteredArr}) => {
       .map((product) => (
         <div
           key={product.ProductId}
-          className="bg-white border rounded-xl shadow hover:shadow-md transition overflow-hidden max-w-[300px]"
+          className="bg-white border rounded-xl shadow hover:shadow-md transition overflow-hidden max-w-[300px] min-h-[300px]"
         >
           <div className="relative">
             <img
