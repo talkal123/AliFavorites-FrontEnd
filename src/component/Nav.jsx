@@ -219,7 +219,7 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory }) => {
           </div>
         </div>
       </div>
-      <div className="col-span-2 w-full border-b-1 p-2">
+      <div className="flex md:hidden col-span-2 w-full border-b-1 p-2">
           <Input onChange={(e) => {setValue(e.target.value); setSelectedCategory("All") }} value={value} type="text" placeholder="Search Here..." className="min-w-full " />
         </div>
     </div>
