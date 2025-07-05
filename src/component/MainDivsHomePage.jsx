@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Fade } from "react-awesome-reveal";
 import { FaMedal } from "react-icons/fa";
 
 const MainDivsHomePage = ({ filteredArr }) => {
@@ -49,11 +50,13 @@ const MainDivsHomePage = ({ filteredArr }) => {
               >
                 <div className="relative">
                   <div className="min-h-[200px]">
+                    <Fade>
                   <img
                     src={product.Image_Url}
                     className="w-full max-h-[200px] object-cover"
                     alt={product.Product_Desc}
                   />
+                  </Fade>
                   </div>
                 </div>
 
@@ -109,11 +112,13 @@ const MainDivsHomePage = ({ filteredArr }) => {
               >
                 <div className="relative">
                   <div className="min-h-[200px] min-w-[300px]">
+                  <Fade>
                   <img
                     src={product.Image_Url}
                     className="w-full max-h-[200px] object-cover"
                     alt={product.Product_Desc}
                   />
+                  </Fade>
                   </div>
                 </div>
 

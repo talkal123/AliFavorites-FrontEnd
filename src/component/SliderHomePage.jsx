@@ -13,6 +13,8 @@ import Photo1 from "../assets/slider1.jpg";
 import Photo2 from "../assets/slider2.jpg";
 import Photo3 from "../assets/slider3.jpg";
 import { FaShoppingCart } from "react-icons/fa";
+import { Fade } from "react-awesome-reveal";
+
 
 const SliderHomePage = () => {
   const photoArr = [Photo1,Photo2,Photo3];
@@ -22,6 +24,7 @@ const SliderHomePage = () => {
   );
   return (
     <div>
+    <Fade>
     <Carousel
       plugins={[plugin.current]}
       className="w-full relative"
@@ -59,6 +62,7 @@ const SliderHomePage = () => {
 </p>
         </div>
     </div>
+    </Fade>
     </div>
   );
 };
