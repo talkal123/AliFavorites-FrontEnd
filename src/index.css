@@ -1,0 +1,9 @@
+/* index.css או global.css */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px; /* גובה הסקרול בציר X */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* צבע הגלילה */
+  border-radius: 4px;
+}
