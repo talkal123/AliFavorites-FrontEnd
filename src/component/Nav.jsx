@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Input } from "@/components/ui/input"
 
-const Nav = ({ mostLikes,setValue,value,setSelectedCategory }) => {
+const Nav = ({ mostLikes,setValue,value,setSelectedCategory}) => {
   return (
     <div className="p-1">
       <div className="hidden md:flex gap-2 justify-between items-center border-b-1 p-5">
@@ -110,7 +110,7 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory }) => {
                       )}
                     </AlertDialogDescription>
                   </AlertDialogHeader>
-                  <AlertDialogFooter>
+                  <AlertDialogFooter className="grid grid-cols-1">
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
                     <AlertDialogAction>Continue</AlertDialogAction>
                   </AlertDialogFooter>

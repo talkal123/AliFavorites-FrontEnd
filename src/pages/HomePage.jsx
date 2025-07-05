@@ -231,7 +231,7 @@ const HomePage = ({
                   </div>
 
                   <AlertDialogFooter>
-                    <AlertDialogCancel className="cursor-pointer">
+                    <AlertDialogCancel className="cursor-pointer w-full">
                       Close
                     </AlertDialogCancel>
                   </AlertDialogFooter>
