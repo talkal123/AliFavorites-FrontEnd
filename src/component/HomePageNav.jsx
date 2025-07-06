@@ -119,7 +119,7 @@ const HomePageNav = ({ setCategories, categories }) => {
 <div className="overflow-x-auto scrollbar-thin w-full">
   <div className="flex gap-4 p-2">
    
-<div className="flex gap-4 p-2">
+<div className="flex gap-3 p-1">
   {categoriesList.map((category, index) => (
     <div key={index} className="flex flex-col items-center gap-1 flex-shrink-0 min-w-[72px]">
       <div
@@ -148,7 +148,7 @@ const HomePageNav = ({ setCategories, categories }) => {
 </div>
 
 
-   <div className="flex flex-col items-center justify-center gap-1 flex-shrink-0 min-w-[72px]">
+   <div className="flex flex-col items-center justify-center gap-1 flex-shrink-0 min-w-[72x]">
       
       <div className="w-[80px]">
         <Select onValueChange={(value) => {
