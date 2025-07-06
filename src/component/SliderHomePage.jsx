@@ -56,7 +56,7 @@ const SliderHomePage = () => {
     </Carousel>
     <div className="flex justify-center p-5 w-full bg-[#ebebeb] rounded-md">
         <div>
-            <p className="flex items-center gap-2 text-lg font-semibold text-green-600">
+            <p className="flex items-center gap-2 text-md md:text-lg font-semibold text-green-600">
   <FaShoppingCart className="text-xl" />
   Start shopping your favorite deals!
 </p>

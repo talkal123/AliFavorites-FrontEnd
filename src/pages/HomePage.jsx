@@ -26,7 +26,7 @@ const HomePage = ({
   setFilteredArr,
   theFilter,
 }) => {
-  const [itemsToShow, setItemsToShow] = useState(16);
+  const [itemsToShow, setItemsToShow] = useState(8);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [display, setDisplay] = useState(
     "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
@@ -162,6 +162,7 @@ const HomePage = ({
                         )}
                       </div>
                       <img
+                        loading="lazy"
                         src={product.Image_Url}
                         className="w-full min-h-[200px] max-h-[300px] md:max-h-[300px] md:min-h-[300px] object-cover"
                         alt={product.Product_Desc}
@@ -200,12 +201,14 @@ const HomePage = ({
                   <div className="space-y-4">
                     {product.Video_Url ? (
                       <video
+                        loading="lazy"
                         src={product.Video_Url}
                         controls
                         className="w-full max-h-[300px] min-h-[300px] md:max-h-[300px] md:min-h-[300px] object-cover"
                       />
                     ) : (
                       <img
+                        loading="lazy"
                         src={product.Image_Url}
                         alt={product.Product_Desc}
                         className="w-full max-h-[300px] min-h-[300px] md:max-h-[300px] md:min-h-[300px] object-cover"
