@@ -134,10 +134,9 @@ const HomePage = ({
             );
 
             return (
-              
+
               <AlertDialog key={product.ProductId}>
                 <AlertDialogTrigger asChild>
-                  <Fade>
                   <div
                     onClick={() => setById(product)}
                     className="bg-white shadow hover:shadow-md transition overflow-hidden cursor-pointer rounded-lg"
@@ -192,8 +191,8 @@ const HomePage = ({
                       </div>
                     </div>
                   </div>
-                  </Fade>
                 </AlertDialogTrigger>
+                
 
                 <AlertDialogContent className="z-60">
                   <AlertDialogHeader></AlertDialogHeader>
@@ -242,6 +241,7 @@ const HomePage = ({
                   </AlertDialogFooter>
                 </AlertDialogContent>
               </AlertDialog>
+
             );
           })}
         </div>
