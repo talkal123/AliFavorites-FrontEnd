@@ -122,7 +122,7 @@ const HomePage = ({
 
       <div className="flex flex-col gap-0 md:gap-20 justify-center items-center">
         <div className="flex justify-center items-center p-5">
-          <h1 className="text-2xl md:text-5xl font-bold tracking-wide font-sans animate-fade-in">
+          <h1 className="text-xl md:text-5xl font-bold tracking-wide font-sans animate-fade-in">
             Discover Your Favorite Picks 🛍️
           </h1>
         </div>

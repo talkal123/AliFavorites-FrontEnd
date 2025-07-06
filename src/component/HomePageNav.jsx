@@ -117,9 +117,9 @@ const HomePageNav = ({ setCategories, categories }) => {
         </ul>
         <div className="flex items-center md:hidden max-w-full">
 <div className="overflow-x-auto scrollbar-thin w-full">
-  <div className="flex gap-4 p-2">
+  <div className="flex gap-4 p-0">
    
-<div className="flex gap-3 p-1">
+<div className="flex gap-1 p-2">
   {categoriesList.map((category, index) => (
     <div key={index} className="flex flex-col items-center gap-1 flex-shrink-0 min-w-[72px]">
       <div
