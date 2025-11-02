@@ -175,10 +175,16 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory,setMostLikes}) => {
       <div className="flex md:hidden justify-between items-center p-2 w-full">
         <div className="flex items-center">
           <div>
-            <img src={aliLogo} className="max-w-[150px] md:max-w-[200px] " alt="" />
-          </div>
+  <Link to="/">
+    <img
+      src={aliLogo}
+      className="max-w-[150px] md:max-w-[200px]"
+      alt="Logo"
+    />
+  </Link>
+</div>
         </div>
-        <div className="flex items-end justify-center max-h-16 min-h-16 ">
+        <div className="flex items-center justify-center max-h-16 min-h-16 gap-2">
           <div className=" flex flex-col justify-center items-center">
             {mostLikes.length === 0 ? (
               <></>
@@ -188,7 +194,7 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory,setMostLikes}) => {
               </div>
             )}
 
-            <div>
+            <div className="mt-2">
               <AlertDialog>
                 <AlertDialogTrigger>
                   <CiHeart className="mb-1.5 w-10 h-10 cursor-pointer" />
@@ -272,6 +278,40 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory,setMostLikes}) => {
               </AlertDialog>
             </div>
           </div>
+                       <div>
+                <AlertDialog>
+      <AlertDialogTrigger asChild>
+                        <GiHamburgerMenu className="w-6 h-6 cursor-pointer"/>
+
+      </AlertDialogTrigger>
+      <AlertDialogContent className="items-end mt-20 ">
+        <AlertDialogHeader>
+          <AlertDialogTitle>More</AlertDialogTitle>
+          <AlertDialogDescription className="flex flex-col">
+            <Link to="/terms" className="text-blue-600 underline">
+    Terms of Use
+  </Link>
+  ,{" "}
+  <Link to="/privacy" className="text-blue-600 underline">
+    Privacy Policy
+  </Link>
+  , and{" "}
+  <Link to="/disclosure" className="text-blue-600 underline">
+    Affiliate Disclosure
+  </Link>
+  . If you have questions, you can{" "}
+  <Link to="/contact" className="text-blue-600 underline">
+    contact us
+  </Link>
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction>Continue</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+        </div>
         </div>
       </div>
       <div className="flex md:hidden col-span-2 w-full border-b-1 p-2">
