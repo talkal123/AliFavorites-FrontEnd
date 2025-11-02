@@ -14,6 +14,8 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Input } from "@/components/ui/input"
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 
 const Nav = ({ mostLikes,setValue,value,setSelectedCategory,setMostLikes}) => {
@@ -49,7 +51,7 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory,setMostLikes}) => {
               </div>
             )}
 
-            <div>
+            <div className="flex items-center gap-5">
               <AlertDialog>
                 <AlertDialogTrigger>
                   <CiHeart className="mb-1.5 w-10 h-10 cursor-pointer" />
@@ -131,6 +133,41 @@ const Nav = ({ mostLikes,setValue,value,setSelectedCategory,setMostLikes}) => {
                   </AlertDialogFooter>
                 </AlertDialogContent>
               </AlertDialog>
+              <div>
+                <AlertDialog>
+      <AlertDialogTrigger asChild>
+                        <GiHamburgerMenu className="w-6 h-6 cursor-pointer"/>
+
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>More</AlertDialogTitle>
+          <AlertDialogDescription className="flex flex-col">
+            <Link to="/terms" className="text-blue-600 underline">
+    Terms of Use
+  </Link>
+  ,{" "}
+  <Link to="/privacy" className="text-blue-600 underline">
+    Privacy Policy
+  </Link>
+  , and{" "}
+  <Link to="/disclosure" className="text-blue-600 underline">
+    Affiliate Disclosure
+  </Link>
+  . If you have questions, you can{" "}
+  <Link to="/contact" className="text-blue-600 underline">
+    contact us
+  </Link>
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction>Continue</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+              </div>
+              
             </div>
           </div>
         </div>

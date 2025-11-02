@@ -5,6 +5,11 @@ import HomePage from './pages/HomePage';
 import Nav from './component/Nav';
 import HomePageNav from './component/HomePageNav';
 import axios from 'axios';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import TermsOfUse from './pages/TermsOfUse';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import AffiliateDisclosure from './pages/AffiliateDisclosure';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   const [mostLikes, setMostLikes] = useState([]);
@@ -48,35 +53,46 @@ function App() {
   };
 
   return (
-    <div className=''>
-      <div className='sticky top-0 z-60 bg-white w-full md:flex flex-col'>
-        <Nav
-        setSelectedCategory={setSelectedCategory}
-        mostLikes={mostLikes}
-        setMostLikes={setMostLikes}
-        filteredArr={filteredArr}
-        setFilteredArr={setFilteredArr}
-        allProducts={categories}
-        value={value}
-        setValue={setValue}
-      />
-        <HomePageNav
-          categories={selectedCategory}
-          setCategories={setSelectedCategory}
-        />
-      </div>
+    <BrowserRouter>
+  <div className="sticky top-0 z-60 bg-white w-full md:flex flex-col">
+    <Nav
+      setSelectedCategory={setSelectedCategory}
+      mostLikes={mostLikes}
+      setMostLikes={setMostLikes}
+      filteredArr={filteredArr}
+      setFilteredArr={setFilteredArr}
+      allProducts={categories}
+      value={value}
+      setValue={setValue}
+    />
+    <HomePageNav
+      categories={selectedCategory}
+      setCategories={setSelectedCategory}
+    />
+  </div>
 
-      <HomePage
-        value={value}
-        setValue={setValue}
-        filteredArr={filteredArr}
-        setFilteredArr={setFilteredArr}
-        categories={categories}
-        addMostLikes={addMostLikes}
-        mostLikes={mostLikes}
-        theFilter={theFilter}
-      />
-    </div>
+  <Routes>
+    <Route
+      path="/home"
+      element={
+        <HomePage
+          value={value}
+          setValue={setValue}
+          filteredArr={filteredArr}
+          setFilteredArr={setFilteredArr}
+          categories={categories}
+          addMostLikes={addMostLikes}
+          mostLikes={mostLikes}
+          theFilter={theFilter}
+        />
+      }
+    />
+    <Route path="/terms" element={<TermsOfUse />} />
+    <Route path="/privacy" element={<PrivacyPolicy />} />
+    <Route path="/disclosure" element={<AffiliateDisclosure />} />
+    <Route path="/contact" element={<ContactPage />} />
+  </Routes>
+</BrowserRouter>
   );
 }
 
